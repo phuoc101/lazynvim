@@ -55,6 +55,11 @@ keymap("v", "k", "gk", opts)
 -- INSERT --
 -- Press jk fast to exit insert mode
 keymap("i", "jk", "<ESC>", opts)
+-- Ctrl + hjkl to move
+keymap("i", "<C-h>", "<Left>", opts)
+keymap("i", "<C-j>", "<Down>", opts)
+keymap("i", "<C-k>", "<Up>", opts)
+keymap("i", "<C-l>", "<Right>", opts)
 
 -- Delete a word with ctr+bs/ctr+del
 keymap("i", "<C-Backspace>", "<ESC>vbdi", opts)
