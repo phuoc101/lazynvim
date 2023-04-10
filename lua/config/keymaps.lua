@@ -46,6 +46,9 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==g", opts)
 keymap("n", "B", "^", opts)
 keymap("n", "E", "$", opts)
 
+-- format
+keymap("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+
 -- Move cursor up/down base on what's displayed on the screen instead of the actual line
 keymap("n", "j", "gj", opts)
 keymap("n", "k", "gk", opts)

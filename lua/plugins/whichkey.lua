@@ -89,7 +89,6 @@ return {
       },
       ["e"] = { "<cmd>Neotree<cr>", "Explorer" },
       ["w"] = { "<cmd>w!<CR>", "Save" },
-      ["q"] = { "<cmd>q<CR>", "Quit" },
       ["Q"] = { "<cmd>q!<CR>", "Force Quit" },
       ["c"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
       ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
