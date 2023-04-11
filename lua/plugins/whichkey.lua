@@ -87,7 +87,7 @@ return {
         "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
         "Buffers",
       },
-      ["e"] = { "<cmd>Neotree<cr>", "Explorer" },
+      ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
       ["w"] = { "<cmd>w!<CR>", "Save" },
       ["Q"] = { "<cmd>q!<CR>", "Force Quit" },
       ["c"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
@@ -196,8 +196,8 @@ return {
     local sub_mappings = {
       l = {
         name = "Latex",
-        l = { "<cmd>VimtexCompile<cr>", "Compile LaTeX file" },
-        v = { "<cmd>VimtexView<cr>", "View pdf" },
+        l = { "<cmd>TexlabBuild<cr>", "Compile LaTeX file" },
+        v = { "<cmd>TexlabForward<cr>", "View pdf" },
       },
       m = {
         name = "Markdown",

@@ -88,10 +88,3 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-
--- Plugins
-local status_ok, _ = pcall(require, "hop")
-if status_ok then
-  vim.keymap.set("n", "F", "<cmd>HopChar1<CR>", { desc = "Hop character" })
-  vim.keymap.set("v", "F", "<cmd>HopChar1<CR>", { desc = "Hop character" })
-end
