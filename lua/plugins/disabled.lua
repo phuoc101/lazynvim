@@ -1,9 +1,15 @@
 return {
   { "folke/trouble.nvim", enabled = false },
   { "akinsho/bufferline.nvim", enabled = false },
-  -- { "ggandor/leap.nvim", enabled = false },
+  { "ggandor/leap.nvim", enabled = false },
   { "ggandor/flit.nvim", enabled = false },
   { "stevearc/dressing.nvim", enabled = false },
   { "folke/noice.nvim", enabled = false },
   { "nvim-neo-tree/neo-tree.nvim", enabled = false },
+  { "echasnovski/mini.comment", enabled = false },
+  { "echasnovski/mini.surround", enabled = false },
+  { "echasnovski/mini.ai", enabled = false },
+  { "folke/todo-comments.nvim", enabled = false },
+  { "folke/trouble.nvim", enabled = false },
+  { "windwp/nvim-spectre", enabled = false },
 }
