@@ -1,12 +1,8 @@
 return {
   {
-    "LazyVim/LazyVim",
+    "phuoc101/LazyVim",
     opts = {
       colorscheme = "vscode",
-      default = {
-        keymaps = false,
-        options = false, -- lazyvim.config.options
-      },
     },
   },
 }
