@@ -1,6 +1,6 @@
 return {
   {
-    "phuoc101/LazyVim",
+    "git@github.com:phuoc101/LazyVim.git",
     opts = {
       colorscheme = "vscode",
     },
