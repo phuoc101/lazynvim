@@ -21,7 +21,7 @@ return {
     end,
     opts = {
       mappings = {
-        add = "sa", -- Add surrounding in Normal and Visual modes
+        add = "S", -- Add surrounding in Normal and Visual modes
         delete = "sd", -- Delete surrounding
         replace = "sr", -- Replace surrounding
         -- find = "sf", -- Find surrounding (to the right)
