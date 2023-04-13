@@ -1,6 +1,5 @@
 # 💤 LazyVim
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+Personal config base on template for [LazyVim](https://github.com/LazyVim/LazyVim) (switched to my own template at https://github.com/phuoc101/LazyVim)
 
-Go to `~/.local/share/nvim/LazyVim/` and delete `keymaps.lua` and `options.lua`
+Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
