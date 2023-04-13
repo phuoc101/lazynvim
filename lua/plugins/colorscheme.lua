@@ -29,4 +29,22 @@ return {
     "Shatur/neovim-ayu",
     lazy = true,
   },
+  {
+    "marko-cerovac/material.nvim",
+    lazy = true,
+    config = function()
+      vim.g.material_style = "darker"
+    end,
+  },
+  {
+    "EdenEast/nightfox.nvim",
+    lazy = true,
+  },
+
+  {
+    "git@github.com:phuoc101/LazyVim.git",
+    opts = {
+      colorscheme = "carbonfox",
+    },
+  },
 }

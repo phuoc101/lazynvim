@@ -3,21 +3,21 @@ return {
   event = "VeryLazy",
   config = function()
     local lualine = require("lualine")
-      -- Color table for highlights
-      -- stylua: ignore
-      local colors = {
-        bg       = '#262626',
-        fg       = '#bbc2cf',
-        yellow   = '#ECBE7B',
-        cyan     = '#008080',
-        darkblue = '#081633',
-        green    = '#98be65',
-        orange   = '#FF8800',
-        violet   = '#a9a1e1',
-        magenta  = '#c678dd',
-        blue     = '#51afef',
-        red      = '#ec5f67',
-      }
+    -- Color table for highlights
+    -- stylua: ignore
+    local colors = {
+      bg       = '#262626',
+      fg       = '#bbc2cf',
+      yellow   = '#ECBE7B',
+      cyan     = '#008080',
+      darkblue = '#081633',
+      green    = '#98be65',
+      orange   = '#FF8800',
+      violet   = '#a9a1e1',
+      magenta  = '#c678dd',
+      blue     = '#51afef',
+      red      = '#ec5f67',
+    }
 
     local conditions = {
       buffer_not_empty = function()
@@ -157,7 +157,6 @@ return {
       show_filename_only = true, -- Shows shortened relative path when set to false.
       hide_filename_extension = false, -- Hide filename extension when set to true.
       show_modified_status = true, -- Shows indicator when the buffer is modified.
-
       mode = 4, -- 0: Shows buffer name
       -- 1: Shows buffer index
       -- 2: Shows buffer name + buffer index
@@ -171,13 +170,11 @@ return {
         fzf = "FZF",
         alpha = "Alpha",
       }, -- Shows specific buffer name for that filetype ( { `filetype` = `buffer_name`, ... } )
-
       buffers_color = {
         -- Same values as the general color option can be used here.
         active = { fg = colors.blue, bg = colors.darkgray, gui = "bold" }, -- Color for active buffer.
         inactive = { fg = colors.cyan, bg = colors.bg, gui = "bold" }, -- Color for inactive buffer.
       },
-
       symbols = {
         modified = " ●", -- Text to show when the buffer is modified
         directory = "", -- Text to show when the buffer is a directory
@@ -190,6 +187,11 @@ return {
     -- 	"filesize",
     -- 	cond = conditions.buffer_not_empty,
     -- })
+    ins_right({
+      require("noice").api.status.mode.get,
+      cond = require("noice").api.status.mode.has,
+      color = { fg = "#ff9e64" },
+    })
 
     ins_right({ "location", color = { fg = colors.fg, gui = "bold" } })
 
@@ -263,7 +265,6 @@ return {
 
     ins_right({
       "fileformat",
-
       symbols = {
         unix = "UNIX ", -- e712
         dos = "WIN ", -- e70f
@@ -271,7 +272,6 @@ return {
       },
       fmt = string.upper,
       icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
-
       color = function()
         -- auto change color according to neovims mode
         local mode_color = {

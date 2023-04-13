@@ -13,6 +13,7 @@ return {
     keys = function()
       ---@type LazyKeys[]
       local ret = {}
+
       ret[1] = { "f", mode = { "n", "x", "o" }, desc = "f" }
       ret[1] = { "F", mode = { "n", "x", "o" }, desc = "F" }
       return ret
