@@ -31,7 +31,7 @@ return {
       colors.generate(false)
       require("ayu").setup({
         overrides = {
-          Visual = { bg = colors.fg_idle, fg = colors.black },
+          Visual = { bg = colors.fg_idle, fg = colors.accent },
           IncSearch = { bg = colors.tag, fg = colors.selection_bg, bold = true },
           Comment = { fg = colors.comment, italic = true },
         },
