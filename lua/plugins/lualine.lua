@@ -5,18 +5,32 @@ return {
     local lualine = require("lualine")
     -- Color table for highlights
     -- stylua: ignore
+    local ayu_color = require("ayu.colors")
+    -- local colors = {
+    --   bg       = '#262626',
+    --   fg       = '#bbc2cf',
+    --   yellow   = '#ECBE7B',
+    --   cyan     = '#008080',
+    --   darkblue = '#081633',
+    --   green    = '#98be65',
+    --   orange   = '#FF8800',
+    --   violet   = '#a9a1e1',
+    --   magenta  = '#c678dd',
+    --   blue     = '#51afef',
+    --   red      = '#ec5f67',
+    -- }
     local colors = {
-      bg       = '#262626',
-      fg       = '#bbc2cf',
-      yellow   = '#ECBE7B',
-      cyan     = '#008080',
-      darkblue = '#081633',
-      green    = '#98be65',
-      orange   = '#FF8800',
-      violet   = '#a9a1e1',
-      magenta  = '#c678dd',
-      blue     = '#51afef',
-      red      = '#ec5f67',
+      bg = ayu_color.black,
+      fg = ayu_color.fg,
+      yellow = ayu_color.func,
+      cyan = ayu_color.comment,
+      darkblue = ayu_color.ui,
+      green = ayu_color.operator,
+      orange = ayu_color.accent,
+      violet = ayu_color.constant,
+      magenta = ayu_color.tag,
+      blue = ayu_color.entity,
+      red = ayu_color.markup,
     }
 
     local conditions = {
@@ -187,11 +201,11 @@ return {
     -- 	"filesize",
     -- 	cond = conditions.buffer_not_empty,
     -- })
-    ins_right({
-      require("noice").api.status.mode.get,
-      cond = require("noice").api.status.mode.has,
-      color = { fg = "#ff9e64" },
-    })
+    -- ins_right({
+    --   require("noice").api.status.mode.get,
+    --   cond = require("noice").api.status.mode.has,
+    --   color = { fg = "#ff9e64" },
+    -- })
 
     ins_right({ "location", color = { fg = colors.fg, gui = "bold" } })
 

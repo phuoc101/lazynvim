@@ -72,7 +72,6 @@ return {
           -- Accept currently selected item. If none selected, `select` first item.
           -- Set `select` to `false` to only confirm explicitly selected items.
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
-          ["C-l"] = cmp.mapping.confirm({ select = true }),
           ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
@@ -109,12 +108,18 @@ return {
           { name = "buffer" },
           { name = "path" },
         }),
+        window = {
+          completion = {
+            winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+            col_offset = -3,
+            side_padding = 0,
+          },
+        },
         formatting = {
           fields = { "kind", "abbr", "menu" },
           format = function(entry, vim_item)
             -- Kind icons
             vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-            -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
             vim_item.menu = ({
               nvim_lsp = "[LSP]",
               luasnip = "[Snippet]",
@@ -136,6 +141,8 @@ return {
               local maxwidth = 80
               vim_item.abbr = string.sub(vim_item.abbr, 1, maxwidth)
             end
+            local strings = vim.split(vim_item.kind, "%s", { trimempty = true })
+            vim_item.kind = " " .. (strings[1] or "") .. " "
             return vim_item
           end,
         },

@@ -43,7 +43,6 @@ return {
             --   "%p",
             -- },
           },
-          latexFormatter = "latexindent",
           latexindent = {
             modifyLineBreaks = true,
           },
