@@ -5,13 +5,15 @@ return {
     opts = function(plugin)
       local icons = require("lazyvim.config").icons
 
-      local function fg(name)
-        return function()
-          ---@type {foreground?:number}?
-          local hl = vim.api.nvim_get_hl_by_name(name, true)
-          return hl and hl.foreground and { fg = string.format("#%06x", hl.foreground) }
-        end
-      end
+      -- local function fg(name)
+      --   return function()
+      --     ---@type {foreground?:number}?
+      --     local hl = vim.api.nvim_get_hl_by_name(name, true)
+      --     return hl and hl.foreground and { fg = string.format("#%06x", hl.foreground) }
+      --   end
+      -- end
+
+      local ayu_colors = require("lualine.themes.ayu_dark")
 
       return {
         options = {
@@ -19,7 +21,7 @@ return {
           globalstatus = true,
           disabled_filetypes = { statusline = { "dashboard", "lazy", "alpha" } },
           component_separators = { left = "", right = "" },
-          section_separators = { left = "", right = "" },
+          section_separators = { left = "", right = "" },
         },
         sections = {
           lualine_a = {
@@ -35,7 +37,7 @@ return {
                 }
                 return "" .. " " .. curr_mode[vim.fn.mode()]
               end,
-              padding = { right = 1 },
+              padding = { left = 1, right = 1 },
               separator = { left = "", right = "" },
             },
           },
@@ -53,12 +55,19 @@ return {
                 fzf = "FZF",
                 alpha = "Alpha",
               }, -- Shows specific buffer name for that filetype ( { `filetype` = `buffer_name`, ... } )
-              use_mode_colors = true,
+              use_mode_colors = false,
               symbols = {
                 modified = " ●", -- Text to show when the buffer is modified
                 directory = "", -- Text to show when the buffer is a directory
                 alternate_file = "", -- Text to show to identify the alternate file
               },
+              buffers_color = {
+                -- Same values as the general color option can be used here.
+                active = { fg = ayu_colors.normal.a.bg, bg = "#38354e", gui = "bold" }, -- Color for active buffer.
+                inactive = { fg = ayu_colors.replace.b.fg, bg = "#15152a" }, -- Color for inactive buffer.
+              },
+              separator = { right = "" },
+              section_separator = { right = "" },
             },
             {
               require("noice").api.status.mode.get,
