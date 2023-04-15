@@ -1,5 +1,14 @@
 return {
   {
+    "jinh0/eyeliner.nvim",
+    config = function()
+      require("eyeliner").setup({
+        highlight_on_key = true,
+        dim = true,
+      })
+    end,
+  },
+  {
     "phaazon/hop.nvim",
     branch = "v2", -- optional but strongly recommended
     config = function()
@@ -8,7 +17,7 @@ return {
       -- you can configure Hop the way you like here; see :h hop-config
       hop.setup({ keys = "etovxqpdygfblzhckisuran" })
 
-      vim.keymap.set({ "n", "v" }, "F", "<cmd>HopChar2<CR>", { remap = true })
+      vim.keymap.set({ "n", "v" }, "J", "<cmd>HopChar2<CR>", { remap = true })
     end,
   },
 }
