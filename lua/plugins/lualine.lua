@@ -13,7 +13,7 @@ return {
       --   end
       -- end
 
-      local ayu_colors = require("lualine.themes.ayu_dark")
+      local theme_colors = require("lualine.themes.carbonfox")
 
       return {
         options = {
@@ -61,19 +61,19 @@ return {
                 directory = "", -- Text to show when the buffer is a directory
                 alternate_file = "", -- Text to show to identify the alternate file
               },
-              buffers_color = {
-                -- Same values as the general color option can be used here.
-                active = { fg = ayu_colors.normal.a.bg, bg = "#38354e", gui = "bold" }, -- Color for active buffer.
-                inactive = { fg = ayu_colors.replace.b.fg, bg = "#15152a" }, -- Color for inactive buffer.
-              },
+              -- buffers_color = {
+              --   -- Same values as the general color option can be used here.
+              --   active = { fg = theme_colors.normal.a.bg, bg = "#28253e", gui = "bold" }, -- Color for active buffer.
+              --   inactive = { fg = theme_colors.replace.b.fg, bg = "#15152a" }, -- Color for inactive buffer.
+              -- },
               separator = { right = "" },
               section_separator = { right = "" },
             },
-            {
-              require("noice").api.status.mode.get,
-              cond = require("noice").api.status.mode.has,
-              color = { fg = "#ff9e64" },
-            },
+            -- {
+            --   require("noice").api.status.mode.get,
+            --   cond = require("noice").api.status.mode.has,
+            --   color = { fg = "#ff9e64" },
+            -- },
           },
           lualine_c = {},
           lualine_x = {

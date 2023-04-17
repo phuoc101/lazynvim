@@ -98,9 +98,8 @@ return {
       },
       ["F"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
       ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-
       ["L"] = { "<cmd>Lazy<cr>", "Lazy" },
-
+      ["/"] = { "Comment" },
       g = {
         name = "Git",
         g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
@@ -123,7 +122,6 @@ return {
           "Diff",
         },
       },
-
       l = {
         name = "LSP",
         a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
@@ -166,7 +164,6 @@ return {
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
         C = { "<cmd>Telescope commands<cr>", "Commands" },
       },
-
       -- t = {
       --   name = "Terminal",
       --   n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
