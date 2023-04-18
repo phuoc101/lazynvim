@@ -39,7 +39,7 @@ return {
   },
   {
     "EdenEast/nightfox.nvim",
-    lazy = false,
+    lazy = true,
     config = function()
       -- local colors = require("nightfox.lib.color")
       -- local carbonfox = require("nightfox.palette").load("carbonfox").generate_spec(0)
