@@ -43,31 +43,34 @@ return {
           },
           lualine_b = {
             {
-              "buffers",
-              show_filename_only = true, -- Shows shortened relative path when set to false.
-              hide_filename_extension = false, -- Hide filename extension when set to true.
-              show_modified_status = true, -- Shows indicator when the buffer is modified.
-              mode = 4, -- 0: Shows buffer name
-              filetype_names = {
-                TelescopePrompt = "Telescope",
-                dashboard = "Dashboard",
-                packer = "Packer",
-                fzf = "FZF",
-                alpha = "Alpha",
-              }, -- Shows specific buffer name for that filetype ( { `filetype` = `buffer_name`, ... } )
-              use_mode_colors = false,
+              "filetype",
+              colored = true, -- Displays filetype icon in color if set to true
+              icon_only = true, -- Display only an icon for filetype
+              icon = { align = "right" }, -- Display filetype icon on the right hand side
+              separator = "",
+              padding = { left = 1, right = 0 },
+            },
+            {
+              "filename",
+              file_status = true, -- Displays file status (readonly status, modified status)
+              newfile_status = false, -- Display new file status (new file means no write after created)
+              path = 3, -- 0: Just the filename
+              -- 1: Relative path
+              -- 2: Absolute path
+              -- 3: Absolute path, with tilde as the home directory
+              -- 4: Filename and parent dir, with tilde as the home directory
+
+              shorting_target = 40, -- Shortens path to leave 40 spaces in the window
+              -- for other components. (terrible name, any suggestions?)
               symbols = {
                 modified = " ●", -- Text to show when the buffer is modified
                 directory = "", -- Text to show when the buffer is a directory
                 alternate_file = "", -- Text to show to identify the alternate file
+                readonly = "", -- Text to show when the file is non-modifiable or readonly.
+                unnamed = "[No Name]", -- Text to show for unnamed buffers.
+                newfile = "[New]", -- Text to show for newly created file before first write
               },
-              -- buffers_color = {
-              --   -- Same values as the general color option can be used here.
-              --   active = { fg = theme_colors.normal.a.bg, bg = "#28253e", gui = "bold" }, -- Color for active buffer.
-              --   inactive = { fg = theme_colors.replace.b.fg, bg = "#15152a" }, -- Color for inactive buffer.
-              -- },
               separator = { right = "" },
-              section_separator = { right = "" },
             },
             -- {
             --   require("noice").api.status.mode.get,

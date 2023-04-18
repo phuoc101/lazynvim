@@ -83,9 +83,14 @@ return {
 
     local main_mappings = {
       ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-      ["b"] = {
-        "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-        "Buffers",
+      b = {
+        name = "Buffers",
+        t = {
+          "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+          "Telescope",
+        },
+        p = { "Toggle pin" },
+        P = { "Delete non-pinned buffers" },
       },
       ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
       ["w"] = { "<cmd>w!<CR>", "Save" },

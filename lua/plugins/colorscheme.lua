@@ -20,7 +20,6 @@ return {
         -- Disable nvim-tree background color
         disable_nvimtree_bg = true,
       })
-      require("vscode").load()
     end,
   },
   {
@@ -40,7 +39,7 @@ return {
   },
   {
     "EdenEast/nightfox.nvim",
-    lazy = true,
+    lazy = false,
     config = function()
       -- local colors = require("nightfox.lib.color")
       -- local carbonfox = require("nightfox.palette").load("carbonfox").generate_spec(0)
