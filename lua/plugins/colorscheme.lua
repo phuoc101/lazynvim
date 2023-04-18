@@ -62,7 +62,7 @@ return {
           },
           inverse = {
             -- Inverse highlight for different types
-            match_paren = false,
+            match_paren = true,
             visual = false,
             search = false,
           },

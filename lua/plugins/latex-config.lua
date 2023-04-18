@@ -67,9 +67,15 @@ return {
   {
     "lervag/vimtex",
     config = function()
-      vim.g.vimtex_view_method = "sioyek"
-      vim.g.vimtex_view_general_viewer = "sioyek"
-      vim.g.vimtex_view_forward_search_on_start = false
+      -- Turn these off for faster UI when writing tex file
+      vim.opt.cursorline = false
+      vim.opt.relativenumber = false
+      vim.opt.colorcolumn = ""
+      -- Zathura as main pdf
+      vim.g.vimtex_view_method = "zathura"
+      vim.g.vimtex_view_general_viewer = "zathura"
+
+      vim.g.vimtex_view_forward_search_on_start = true
       vim.g.vimtex_toc_config = {
         mode = 1,
         fold_enable = 0,
@@ -90,5 +96,6 @@ return {
         "Overfull",
       }
     end,
+    ft = { "tex", "bib" }, -- for lazy loading
   },
 }
