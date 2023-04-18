@@ -22,7 +22,7 @@ return {
           text_objects = true, -- help for text objects triggered after entering an operator
           windows = true, -- default bindings on <c-w>
           nav = true, -- misc bindings to work with windows
-          z = false, -- bindings for folds, spelling and others prefixed with z
+          z = true, -- bindings for folds, spelling and others prefixed with z
           g = true, -- bindings for prefixed with g
         },
       },
@@ -193,13 +193,6 @@ return {
         name = "Latex",
         l = { "<cmd>VimtexCompile<cr>", "Compile LaTeX file" },
         v = { "<cmd>VimtexView<cr>", "View pdf" },
-        e = { "<cmd>VimtexErrors<cr>", "View errors" },
-        x = { "<cmd>VimtexReload<cr>", "Reload" },
-        i = { "<cmd>VimtexInfo<cr>", "Info" },
-        c = { "<cmd>VimtexClean<cr>", "Clean" },
-        C = { "<cmd>VimtexCleanCache<cr>", "Clean cache" },
-        s = { "<cmd>VimtexStop<cr>", "Stop" },
-        S = { "<cmd>VimtexStopAll<cr>", "Stop all" },
       },
       m = {
         name = "Markdown",
