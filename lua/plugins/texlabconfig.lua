@@ -67,10 +67,6 @@ return {
   {
     "lervag/vimtex",
     config = function()
-      vim.opt.relativenumber = false
-      vim.opt.cursorline = false
-      vim.opt.colorcolumn = ""
-      -- Preview method
       vim.g.vimtex_view_method = "zathura"
       vim.g.vimtex_view_general_viewer = "zathura"
       vim.g.vimtex_view_forward_search_on_start = false
@@ -94,6 +90,5 @@ return {
         "Overfull",
       }
     end,
-    ft = { "tex", "bib" },
   },
 }

@@ -41,7 +41,7 @@ local options = {
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
   whichwrap = "bs<>[]hl",                  -- which "horizontal" keys are allowed to travel to prev/next line
   lazyredraw = false,                       -- not redraw the screen
-  colorcolumn = "120",                      -- show ruler
+  colorcolumn = "80",                      -- show ruler
 }
 
 for k, v in pairs(options) do
