@@ -191,8 +191,8 @@ return {
     local sub_mappings = {
       l = {
         name = "Latex",
-        l = { "<cmd>TexlabBuild<cr>", "Compile LaTeX file" },
-        v = { "<cmd>TexlabForward<cr>", "View pdf" },
+        l = { "<cmd>VimtexCompile<cr>", "Compile LaTeX file" },
+        v = { "<cmd>VimtexPreview<cr>", "View pdf" },
       },
       m = {
         name = "Markdown",
