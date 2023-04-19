@@ -17,7 +17,7 @@ return {
       -- you can configure Hop the way you like here; see :h hop-config
       hop.setup({ keys = "etovxqpdygfblzhckisuran" })
 
-      vim.keymap.set({ "n", "v" }, "J", "<cmd>HopChar2<CR>", { remap = true })
+      vim.keymap.set({ "n", "v" }, "<leader>F", "<cmd>HopChar2<CR>", { remap = true })
     end,
   },
 }

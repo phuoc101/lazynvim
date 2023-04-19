@@ -53,7 +53,7 @@ return {
             conditionals = "italic",
             constants = "bold",
             functions = "bold",
-            keywords = "bold",
+            keywords = "bold, italic",
             numbers = "NONE",
             operators = "NONE",
             strings = "NONE",
@@ -69,8 +69,9 @@ return {
         },
         groups = {
           carbonfox = {
-            CursorLine = { bg = Color.from_hex(palette.bg2) },
+            CursorLine = { bg = Color.from_hex(palette.bg3) },
             Visual = { bg = Color.from_hex(palette.fg3), fg = Color.from_hex(palette.bg0), style = "bold" },
+            VertSplit = { fg = Color.from_hex(palette.fg3) },
           },
         },
       })
