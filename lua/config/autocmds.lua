@@ -9,5 +9,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.opt.relativenumber = false
     vim.opt.cursorline = false
     vim.opt.colorcolumn = ""
+    vim.wo.number = false
   end,
 })

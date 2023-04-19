@@ -89,20 +89,19 @@ return {
           "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
           "Telescope",
         },
-        p = { "Toggle pin" },
-        P = { "Delete non-pinned buffers" },
+        p = { "<Cmd>BufferLineTogglePin<CR>", "Toggle pin" },
+        P = { "<Cmd>BufferLineGroupClose ungrouped<CR>", "Delete non-pinned buffers" },
+        d = { "<cmd>bdelete!<CR>", "Delete buffer" },
       },
       ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
       ["w"] = { "<cmd>w!<CR>", "Save" },
       ["Q"] = { "<cmd>q!<CR>", "Force Quit" },
-      ["c"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
       ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
       ["f"] = {
         "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
         "Find files",
       },
       ["F"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
-      ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
       ["L"] = { "<cmd>Lazy<cr>", "Lazy" },
       ["/"] = { "Comment" },
       g = {
@@ -193,10 +192,17 @@ return {
         name = "Latex",
         l = { "<cmd>VimtexCompile<cr>", "Compile LaTeX file" },
         v = { "<cmd>VimtexView<cr>", "View pdf" },
+        t = { "<cmd>VimtexTocToggle<cr>", "Toggle TOC" },
       },
       m = {
         name = "Markdown",
         p = { "<cmd>MarkdownPreview<cr>", "Preview Markdown" },
+      },
+      z = {
+        name = "Zen mode",
+        a = { "<cmd>TZAtaraxis<cr>", "Ataraxis" },
+        n = { "<cmd>TZNarrow<cr>", "Narrow" },
+        m = { "<cmd>TZMinimalist<cr>", "Minimalist" },
       },
     }
 
