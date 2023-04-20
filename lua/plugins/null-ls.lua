@@ -20,7 +20,7 @@ return {
           -- Lua
           formatting.stylua,
           -- LaTeX
-          formatting.latexindent.with({ extra_args = { "--modifyLineBreaks", "-l=~/.indentconfig.yaml" } }),
+          formatting.latexindent.with({ extra_args = { "--modifyLineBreaks" } }),
           -- Markdown
           formatting.mdformat,
         },

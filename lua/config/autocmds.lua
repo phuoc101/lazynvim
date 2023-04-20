@@ -7,7 +7,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "tex", "bib" },
   callback = function()
     vim.opt.relativenumber = false
-    vim.opt.cursorline = false
+    -- vim.opt.cursorline = false
     vim.opt.colorcolumn = ""
     vim.wo.number = false
   end,
