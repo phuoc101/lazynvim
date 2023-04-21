@@ -1,10 +1,7 @@
 return {
   "folke/which-key.nvim",
   config = function()
-    local status_ok, which_key = pcall(require, "which-key")
-    if not status_ok then
-      return
-    end
+    local which_key = require("which-key")
 
     local setup = {
       plugins = {
@@ -96,15 +93,15 @@ return {
       ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
       ["w"] = { "<cmd>w!<CR>", "Save" },
       ["Q"] = { "<cmd>q!<CR>", "Force Quit" },
-      ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-      ["F"] = { "Hop 2 char" },
-      f = {
+      ["<space>"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+      ["f"] = { "<cmd>HopChar2<CR>", "Hop 2 char" },
+      F = {
         name = "find",
         f = {
-          "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-          "Find files",
+          "<cmd>Telescope find_files<cr>",
+          "Find Files",
         },
-        F = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+        t = { "<cmd>Telescope live_grep<cr>", "Find Text" },
       },
       ["L"] = { "<cmd>Lazy<cr>", "Lazy" },
       ["/"] = { "Comment" },

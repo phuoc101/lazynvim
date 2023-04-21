@@ -1,12 +1,7 @@
 return {
   "goolord/alpha-nvim",
   event = "VimEnter",
-  config = function()
-    local status_ok, alpha = pcall(require, "alpha")
-    if not status_ok then
-      return
-    end
-
+  opts = function()
     local dashboard = require("alpha.themes.dashboard")
     dashboard.section.header.val = {
       [[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
@@ -32,22 +27,38 @@ return {
       [[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
     }
     dashboard.section.buttons.val = {
-      dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
-      dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-      dashboard.button("p", "  Find project", ":Telescope projects <CR>"),
-      dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
-      dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
+      dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
+      dashboard.button("n", " " .. " New file", ":ene <BAR> startinsert <CR>"),
+      dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
+      dashboard.button("t", " " .. " Find text", ":Telescope live_grep <CR>"),
+      dashboard.button("c", " " .. " Config", ":e $MYVIMRC <CR>"),
+      dashboard.button("s", " " .. " Restore Session", [[:lua require("persistence").load() <cr>]]),
       dashboard.button("l", "󰒲 " .. " Lazy", ":Lazy<CR>"),
-      dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
+      dashboard.button("q", " " .. " Quit", ":qa<CR>"),
     }
+    for _, button in ipairs(dashboard.section.buttons.val) do
+      button.opts.hl = "AlphaButtons"
+      button.opts.hl_shortcut = "AlphaShortcut"
+    end
+    dashboard.section.header.opts.hl = "AlphaHeader"
+    dashboard.section.buttons.opts.hl = "AlphaButtons"
+    dashboard.section.footer.opts.hl = "AlphaFooter"
+    dashboard.opts.layout[1].val = 8
+    return dashboard
+  end,
+  config = function(_, dashboard)
+    -- close Lazy and re-open when the dashboard is ready
+    if vim.o.filetype == "lazy" then
+      vim.cmd.close()
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "AlphaReady",
+        callback = function()
+          require("lazy").show()
+        end,
+      })
+    end
 
-    dashboard.section.footer.opts.hl = "Type"
-    dashboard.section.header.opts.hl = "Include"
-    dashboard.section.buttons.opts.hl = "Keyword"
-
-    dashboard.opts.opts.noautocmd = true
-    -- vim.cmd([[autocmd User AlphaReady echo 'ready']])
-    alpha.setup(dashboard.opts)
+    require("alpha").setup(dashboard.opts)
 
     vim.api.nvim_create_autocmd("User", {
       pattern = "LazyVimStarted",
