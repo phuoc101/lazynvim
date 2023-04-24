@@ -4,11 +4,11 @@
 --
 -- Disable some ui for Latex editing
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "tex", "bib" },
+  pattern = { "tex", "bib", "lua" },
   callback = function()
-    vim.opt.relativenumber = false
+    -- vim.opt.relativenumber = false
     -- vim.opt.cursorline = false
     vim.opt.colorcolumn = ""
-    vim.wo.number = false
+    -- vim.wo.number = false
   end,
 })

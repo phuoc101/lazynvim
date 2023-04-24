@@ -93,8 +93,9 @@ return {
       ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
       ["w"] = { "<cmd>w!<CR>", "Save" },
       ["Q"] = { "<cmd>q!<CR>", "Force Quit" },
-      ["<space>"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+      ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
       ["f"] = { "<cmd>HopChar2<CR>", "Hop 2 char" },
+      [" "] = { "<cmd> lua require'lsp_lines'.toggle()<cr>", "Toggle lsp_lines" },
       F = {
         name = "find",
         f = {

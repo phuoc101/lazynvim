@@ -43,7 +43,8 @@ return {
     config = function()
       -- local colors = require("nightfox.lib.color")
       -- local carbonfox = require("nightfox.palette").load("carbonfox").generate_spec(0)
-      local palette = require("nightfox.palette").load("carbonfox")
+      local carbon_palette = require("nightfox.palette").load("carbonfox")
+      local dayfox_palette = require("nightfox.palette").load("dayfox")
       local Color = require("nightfox.lib.color")
 
       require("nightfox").setup({
@@ -62,16 +63,31 @@ return {
           },
           inverse = {
             -- Inverse highlight for different types
-            match_paren = true,
+            match_paren = false,
             visual = false,
             search = false,
           },
         },
         groups = {
           carbonfox = {
-            CursorLine = { bg = Color.from_hex(palette.bg3) },
-            Visual = { bg = Color.from_hex(palette.fg3), fg = Color.from_hex(palette.bg0), style = "bold" },
-            VertSplit = { fg = Color.from_hex(palette.fg3) },
+            CursorLine = { bg = Color.from_hex(carbon_palette.bg3) },
+            Visual = {
+              bg = Color.from_hex(carbon_palette.fg3),
+              fg = Color.from_hex(carbon_palette.bg0),
+              style = "bold",
+            },
+            VertSplit = { fg = Color.from_hex(carbon_palette.fg3) },
+            MatchParen = { style = "underline,bold" },
+          },
+          dayfox = {
+            CursorLine = { bg = Color.from_hex(dayfox_palette.bg0) },
+            Visual = {
+              bg = Color.from_hex(dayfox_palette.bg3),
+              fg = Color.from_hex(dayfox_palette.fg0),
+              style = "bold",
+            },
+            VertSplit = { fg = Color.from_hex(dayfox_palette.fg3) },
+            MatchParen = { style = "underline,bold" },
           },
         },
       })

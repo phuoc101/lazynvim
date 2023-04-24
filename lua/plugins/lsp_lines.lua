@@ -12,7 +12,6 @@ return {
       vim.diagnostic.config({ virtual_lines = false })
       vim.wo.signcolumn = "yes"
 
-      vim.keymap.set("", "<Leader><Leader>", require("lsp_lines").toggle, { desc = "Toggle lsp_lines" })
     end,
   },
 }
