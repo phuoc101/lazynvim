@@ -14,6 +14,7 @@ return {
       -- end
 
       local theme_colors = require("lualine.themes.carbonfox")
+      theme_colors.visual.a.bg = "#c678dd"
 
       return {
         options = {
@@ -39,9 +40,21 @@ return {
               end,
               padding = { left = 1, right = 1 },
               separator = { left = "", right = "" },
+              color = function()
+                -- auto change color according to neovims mode
+                local mode_color = {
+                  n = theme_colors.normal.a.bg,
+                  i = theme_colors.insert.a.bg,
+                  v = theme_colors.visual.a.bg,
+                  [""] = theme_colors.visual.a.bg,
+                  V = theme_colors.visual.a.bg,
+                  c = theme_colors.command.a.bg,
+                }
+                return { fg = mode_color[vim.fn.mode()], bg = "#282828", gui = "bold" }
+              end,
             },
           },
-          lualine_b = {
+          lualine_c = {
             {
               "filetype",
               colored = true, -- Displays filetype icon in color if set to true
@@ -78,7 +91,7 @@ return {
             --   color = { fg = "#ff9e64" },
             -- },
           },
-          lualine_c = {},
+          lualine_b = {},
           lualine_x = {
             -- stylua: ignore
             {
@@ -116,6 +129,18 @@ return {
               fmt = string.upper,
               icons_enabled = true,
               separator = { left = "", right = "" },
+              color = function()
+                -- auto change color according to neovims mode
+                local mode_color = {
+                  n = theme_colors.normal.a.bg,
+                  i = theme_colors.insert.a.bg,
+                  v = theme_colors.visual.a.bg,
+                  [""] = theme_colors.visual.a.bg,
+                  V = theme_colors.visual.a.bg,
+                  c = theme_colors.command.a.bg,
+                }
+                return { fg = mode_color[vim.fn.mode()], bg = "#282828", gui = "bold" }
+              end,
             },
           },
         },
