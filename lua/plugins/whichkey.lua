@@ -100,10 +100,10 @@ return {
       F = {
         name = "find",
         f = {
-          "<cmd>Telescope find_files<cr>",
+          "<cmd>Files<cr>",
           "Find Files",
         },
-        t = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+        t = { "<cmd>Rg<cr>", "Find Text" },
       },
       ["L"] = { "<cmd>Lazy<cr>", "Lazy" },
       ["/"] = { "Comment" },
