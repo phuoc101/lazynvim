@@ -1,4 +1,3 @@
-
 {
   "subscriber": {
     "scope": "python",
@@ -70,5 +69,21 @@
       "\tprint(e)"
     ],
     "description": "ROS service client wrapped with try/except and prior wait for service."
+  },
+  "setup.py for ROS 1": {
+    "prefix": "ros1:setup.py",
+    "body": [
+      "# ! DO NOT MANUALLY INVOKE THIS setup.py, USE CATKIN INSTEAD",
+      "",
+      "from distutils.core import setup",
+      "from catkin_pkg.python_setup import generate_distutils_setup",
+      "",
+      "# fetch values from package.xml",
+      "setup_args = generate_distutils_setup(packages=[\"${1:pkg}\"], package_dir={\"\": \"${2:pkg_dir}\"})",
+      "",
+      "setup(**setup_args)",
+      ""
+    ],
+    "description": "setup.py for ROS 1"
   }
 }

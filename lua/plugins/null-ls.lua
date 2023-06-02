@@ -23,6 +23,10 @@ return {
           formatting.latexindent.with({ extra_args = { "--modifyLineBreaks" } }),
           -- Markdown
           formatting.mdformat,
+          -- xml
+          formatting.xmlformat.with({ extra_args = { "--blanks"} }),
+          -- cmake
+          formatting.cmake_format,
         },
       })
     end,

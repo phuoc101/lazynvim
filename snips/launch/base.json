@@ -31,6 +31,13 @@
     ],
     "description": "Define xml version"
   },
+  "Launch file remap": {
+    "prefix": "rem",
+    "body": [
+      "<remap from=\"${1:topic_in}\" to=\"${2:topic_out}\"></remap>"
+    ],
+    "description": "Launch file remap"
+  },
   "ROS launch arg": {
     "prefix": "arg",
     "body": [

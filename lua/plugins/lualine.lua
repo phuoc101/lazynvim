@@ -16,6 +16,22 @@ return {
       local theme_colors = require("lualine.themes.carbonfox")
       theme_colors.visual.a.bg = "#c678dd"
 
+      local function get_lsp()
+        local msg = "No Active Lsp"
+        local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+        local clients = vim.lsp.get_active_clients()
+        if next(clients) == nil then
+          return msg
+        end
+        for _, client in ipairs(clients) do
+          local filetypes = client.config.filetypes
+          if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+            return client.name
+          end
+        end
+        return msg
+      end
+
       return {
         options = {
           theme = "auto",
@@ -54,7 +70,7 @@ return {
               end,
             },
           },
-          lualine_c = {
+          lualine_b = {
             {
               "filetype",
               colored = true, -- Displays filetype icon in color if set to true
@@ -91,7 +107,9 @@ return {
             --   color = { fg = "#ff9e64" },
             -- },
           },
-          lualine_b = {},
+          lualine_c = {
+            -- Lsp server name .
+          },
           lualine_x = {
             -- stylua: ignore
             {
@@ -119,6 +137,10 @@ return {
             { "searchcount", color = { fg = "#ff9e64" } },
           },
           lualine_z = {
+            {
+              get_lsp,
+              icon = " LSP:",
+            },
             {
               "fileformat",
               symbols = {
