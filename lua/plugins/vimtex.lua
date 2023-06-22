@@ -17,6 +17,7 @@ return {
         "Underfull",
         "Overfull",
         "Package caption Warning",
+        "Rerun to get cross-references right.",
       }
     end,
   },
